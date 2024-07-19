@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Progetto.Models.ViolazioneDieciPunti>
+
+<h1>Violazioni che superano i 10 punti decurtati</h1>
+<div class="container mt-4">
+    <div class="row">
+        @foreach (var dieciPunti in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-danger text-white">
+                        <h5 class="card-title mb-0">Trasgressore: @dieciPunti.Cognome @dieciPunti.Nome</h5>
+                    </div>
+                    <div class="card-body bg-light">
+                        <p class="card-text">
+                            ID Anagrafica: @dieciPunti.IdVerbale<br>
+                            Cognome: @dieciPunti.Cognome<br>
+                            Nome: @dieciPunti.Nome<br>
+                            Data della violazione: @dieciPunti.DataViolazione<br />
+                            <b>Punti Decurtati: @dieciPunti.PuntiDecurtati</b><br />
+                            <b>Importo da pagare: @dieciPunti.Importo</b>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Ultima consultazione: @DateTime.Now.ToString("dd/MM/yyyy")</small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,62 @@
+﻿@model Progetto.Models.Anagrafica
+
+@{
+    ViewData["Title"] = "CreateTrasgressore";
+}
+
+<h1 class="text-center">Aggiungi un nome alla tua lista di Criminali</h1>
+
+<hr />
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="CreateTrasgressore">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group my-3">
+                    <label asp-for="Cognome" class="control-label"></label>
+                    <input asp-for="Cognome" class="form-control" />
+                    <span asp-validation-for="Cognome" class="text-danger"></span>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Nome" class="control-label"></label>
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Indirizzo" class="control-label"></label>
+                    <input asp-for="Indirizzo" class="form-control" />
+                    <span asp-validation-for="Indirizzo" class="text-danger"></span>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Citta" class="control-label"></label>
+                    <input asp-for="Citta" class="form-control" />
+                    <span asp-validation-for="Citta" class="text-danger"></span>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="CAP" class="control-label"></label>
+                    <input asp-for="CAP" class="form-control" />
+                    <span asp-validation-for="CAP" class="text-danger"></span>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="CodFiscale" class="control-label"></label>
+                    <input asp-for="CodFiscale" class="form-control" />
+                    <span asp-validation-for="CodFiscale" class="text-danger"></span>
+                </div><br />
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <br />
+
+    <div class="text-center">
+        <a asp-action="Index" class="btn btn-link">Torna in Home</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
